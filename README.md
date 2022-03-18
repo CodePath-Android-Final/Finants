@@ -11,7 +11,6 @@
 Tracks user's finance goals to promote saving habits. Users share progress and goals to create a supportive environment.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
 - **Category:** Finance/Social
 - **Mobile:** This app is primarily being built for android devices. It could potentially be a web app in the future to make it more scalable and accessible.
 - **Story:** Users can set financial goals to save money and improve their money-management skills. Users can promote saving habits within the community by meeting their goals and sharing them with the community.
@@ -60,8 +59,7 @@ Tracks user's finance goals to promote saving habits. Users share progress and g
    * ...
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://github.com/CodePath-Android-Final/Finants/blob/main/Finants_Wireframe.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
