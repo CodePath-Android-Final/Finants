@@ -70,6 +70,55 @@ Tracks user's finance goals to promote saving habits. Users share progress and g
 ### Models
 [Add table of models]
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+#### List of network requests by screen
+- Home Feed Screen
+  - (Read/GET) Query all posts from multiple users
+```
+	// Specify which class to query
+        val query: ParseQuery<Post> = ParseQuery.getQuery(Post::class.java)
+        // Find all Post objects
+        query.include(Post.KEY_USER)
+        //Return the posts in descending order: ie newer posts will appear first
+        query.addDescendingOrder("createdAt")
+
+        query.findInBackground(object : FindCallback<Post> {
+            override fun done(posts: MutableList<Post>?, e: ParseException?) {
+                if (e != null) {
+                    //Something went wrong
+                    Log.e(TAG, "Error fetching posts")
+                } else {
+                    if (posts != null) {
+                        allPosts.addAll(posts)
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+            }
+        })
+```
+   - [Reach Stories for Home Feed Screen]
+     - (Create/POST) Create a new like on a post
+     - (Delete) Delete existing like
+     - (Create/POST) Create a new comment on a post
+     - (Delete) Delete existing comment
+
+- Information Screen
+  - (Read/GET) Query all expenses where "author" is user
+  - (Read/GET) Query most recent expense where "author" is user
+  - (Read/GET) Query all income where "author" is user
+  - (Read/GET) Query most recent income where "author" is user
+  - (Read/GET) Query all goals where "author" is user
+  - (Read/GET) Query most recent goal where "author" is user
+  - (Update/PUT) Update total money saved
+  - (Update/PUT) Update the savings, income, expense and recurring fees monthly
+
+- Profile Screen
+  - (Read/GET) Query logged in user object
+  - (Update/PUT) Update user profile image
+  - (Create/POST) Create a new goal
+  - (Create/POST) Create a new income
+  - (Create/POST) Create a new expense
+  - (Update/PUT) Update existing goal
+  - (Update/PUT) Update existing income
+  - (Update/PUT) Update existing expense
+
+#### [OPTIONAL:] Existing API Endpoints
