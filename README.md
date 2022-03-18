@@ -1,7 +1,4 @@
-Original App Design Project - README Template
-===
-
-# APP_NAME_HERE
+# Finants
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -11,16 +8,16 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-[Description of your app]
+Tracks user's finance goals to promote saving habits. Users share progress and goals to create a supportive environment.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category:** Finance/Social
+- **Mobile:** This app is primarily being built for android devices. It could potentially be a web app in the future to make it more scalable and accessible.
+- **Story:** Users can set financial goals to save money and improve their money-management skills. Users can promote saving habits within the community by meeting their goals and sharing them with the community.
+- **Market:** Anyone who wants to manage their finances can use this app.
+- **Habit:** Users can use this app whenever they have a financial event to track.
+- **Scope:** First we would promote savings skills by sharing users' successful goals. Eventually this app could evolve into a social media app highlighting users' financial achievements.
 
 ## Product Spec
 
