@@ -24,39 +24,54 @@ Tracks user's finance goals to promote saving habits. Users share progress and g
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* User logs in to access profile and feed
+* User can register to make an account
+* User can set financial goals
+* User can set times to reach these goals and/or repeaters for these events
+* Main feed with everyone's public goals 
+* Profile to see your own goals
+
 
 **Optional Nice-to-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* Calendar for better time and money management
+* Friends list
+* Isolating posts from friends
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Login
+* Register
+    * Upon downloading the app, user is prompted to log in/register again
+* Profile
+    * User will be able to see all goals and overall timeline in an organized manner
+* Compose
+    * User can manage money goals with descriptions, images, private and public settings, and repeating options
+* Feed
+    * Users can see all people's public goals
+    * [OPTIONAL] Users can isolate posts from friends in a private feed
+* [OPTIONAL] Calendar
+    * Easily manage goals in a scheduled manner
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Feed
+* Compose
+* Profile
+* [OPTIONAL] Calendar
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Forced-Log-in
+   * Register for new account if there is no log in available
+* Feed
+   * Find goals from everyone
+* Compose
+   * Options to display and organize financial goals
+* Profile
+    * Only goals sent from your account are visible
 
 ## Wireframes
 <img src="https://github.com/CodePath-Android-Final/Finants/blob/main/Finants.jpg" width=600>
@@ -68,7 +83,31 @@ Tracks user's finance goals to promote saving habits. Users share progress and g
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+**POST**
+
+| Property | Type | Description |
+| ---- | ---- | ----|
+| objectId | String | unique id for user post(default field) |
+ author| Pointer to User | image author 
+ image | File | image that user posts
+ description | String | description of goal
+ visibility | Boolean | Determines whether post is visible
+ commentsCount | Number | number of comments
+ likesCount | Number | number of likes
+ createdAt | DateTime | date when post is created (default field)
+ updatedAt | DateTime | date when post is last updated (default fied)
+ 
+ 
+**USER**
+
+| Property | Type | Description |
+| ---- | ---- | ----|
+| objectId | String | unique id for user(default field) |
+posts | Array | array of pointers to posts
+ 
+
+
+
 ### Networking
 #### List of network requests by screen
 - Home Feed Screen
