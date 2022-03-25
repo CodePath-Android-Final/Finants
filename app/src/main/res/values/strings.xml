@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Finants</string>
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <!-- Paste BOTH strings as required -->
+    <string name="back4app_app_id">JMtfhY0JnmyQlNb0pEeFSyODFQr3lgA0W1wF4vAw</string>
+    <string name="back4app_client_key">HT7KqCvLy8ZfdjJMPjdOH2HMOUamPfQxMFcHTaYJ</string>
+
 </resources>
