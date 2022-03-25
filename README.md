@@ -165,7 +165,7 @@ The following **required** functionality is completed:
 - [X] Users can login with existing accounts
 - [X] Added app icon
 - [X] User authentication with back4app backend
-
+- [X] Bottom Navigation Bar created
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
