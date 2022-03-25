@@ -170,6 +170,6 @@ The following **required** functionality is completed:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/Proto007/' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/CodePath-Android-Final/Finants/blob/main/walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
