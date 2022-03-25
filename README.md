@@ -40,8 +40,8 @@ Tracks user's finance goals to promote saving habits. Users share progress and g
 
 ### 2. Screen Archetypes
 
-* Login
-* Register
+*[x] Login
+*[x] Register
     * Upon downloading the app, user is prompted to log in/register again
 * Profile
     * User will be able to see all goals and overall timeline in an organized manner
