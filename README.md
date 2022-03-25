@@ -157,4 +157,19 @@ posts | Array | array of pointers to posts
   - (Update/PUT) Update existing income
   - (Update/PUT) Update existing expense
 
-#### [OPTIONAL:] Existing API Endpoints
+## User Stories
+
+The following **required** functionality is completed:
+
+- [X] Users can create an account
+- [X] Users can login with existing accounts
+- [X] Added app icon
+- [X] User authentication with back4app backend
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='https://github.com/Proto007/' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
