@@ -76,9 +76,6 @@ Tracks user's finance goals to promote saving habits. Users share progress and g
 ## Wireframes
 <img src="https://github.com/CodePath-Android-Final/Finants/blob/main/Finants.jpg" width=600>
 
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
 
 ## Schema 
 [This section will be completed in Unit 9]
