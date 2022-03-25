@@ -76,9 +76,6 @@ Tracks user's finance goals to promote saving habits. Users share progress and g
 ## Wireframes
 <img src="https://github.com/CodePath-Android-Final/Finants/blob/main/Finants.jpg" width=600>
 
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
 
 ## Schema 
 [This section will be completed in Unit 9]
@@ -160,4 +157,19 @@ posts | Array | array of pointers to posts
   - (Update/PUT) Update existing income
   - (Update/PUT) Update existing expense
 
-#### [OPTIONAL:] Existing API Endpoints
+## User Stories
+
+The following **required** functionality is completed:
+
+- [X] Users can create an account
+- [X] Users can login with existing accounts
+- [X] Added app icon
+- [X] User authentication with back4app backend
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='https://github.com/Proto007/' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
