@@ -1,10 +1,14 @@
 package com.example.finants.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.PopupMenu
+import com.example.finants.ComposeGoal
 import com.example.finants.R
 
 class ProfileFragment : Fragment() {
@@ -19,5 +23,12 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //Set onclickListeners for the buttons
+        val addingGoal = view.findViewById<Button>(R.id.addGoalBtn)
+        addingGoal.setOnClickListener {
+            val intent = Intent(requireContext(), ComposeGoal::class.java)
+            startActivity(intent)
+        }
     }
 }
