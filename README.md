@@ -176,4 +176,8 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://github.com/CodePath-Android-Final/Finants/blob/main/walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+Week 2 of Progress
+
+<img src='https://github.com/CodePath-Android-Final/Finants/blob/main/WalkthroughPart2.gif' title='Video WalkthroughPart2' width='' alt='Video Walkthrough' />
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
