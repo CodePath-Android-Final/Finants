@@ -43,6 +43,7 @@ class FeedFragment : Fragment() {
     fun queryPosts(){
         val query: ParseQuery<Post> = ParseQuery.getQuery(Post::class.java)
         query.include(Post.KEY_USER)
+        query.addDescendingOrder("createdAt")
         query.findInBackground(object : FindCallback<Post> {
             override fun done(posts: MutableList<Post>?, e: ParseException?){
                 if (e != null) {
