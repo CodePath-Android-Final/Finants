@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/antho/AndroidStudioProjects/Finants/app/src/main/res/layout/fragment_feed.xml" value="0.1" />
+        <entry key="..\:/Users/antho/AndroidStudioProjects/Finants/app/src/main/res/layout/item_post.xml" value="0.1" />
         <entry key="..\:/Downloads/Android Development/Finants/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Downloads/Android Development/Finants/app/src/main/res/layout/fragment_feed.xml" value="0.23020833333333332" />
         <entry key="..\:/Downloads/Android Development/Finants/app/src/main/res/layout/fragment_home.xml" value="0.23020833333333332" />
         <entry key="..\:/Downloads/Android Development/Finants/app/src/main/res/layout/fragment_profile.xml" value="0.11195542046605876" />
         <entry key="..\:/Downloads/Android Development/Finants/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.42916666666666664" />
