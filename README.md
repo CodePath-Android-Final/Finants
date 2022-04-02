@@ -166,6 +166,10 @@ The following **required** functionality is completed:
 - [X] Added app icon
 - [X] User authentication with back4app backend
 - [X] Bottom Navigation Bar created
+- [X] Feed Fragment contains all posts in reverse chronological order with user profile pictures
+- [X] Basic formatting for Feed Fragment is complete
+- [X] Basic Profile Fragment created
+- [X] Users can add goals
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
