@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finants.Post
+import com.example.finants.PostAdapter
 import com.example.finants.R
 import com.parse.FindCallback
 import com.parse.ParseException
@@ -16,6 +18,10 @@ import com.parse.ParseQuery
 class FeedFragment : Fragment() {
 
     lateinit var postsRecyclerView: RecyclerView
+
+    lateinit var adapter: PostAdapter
+
+    var allPosts: MutableList<Post> = mutableListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +35,10 @@ class FeedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         postsRecyclerView = view.findViewById(R.id.postRecyclerView)
+        adapter = PostAdapter(requireContext(), allPosts)
+        postsRecyclerView.adapter = adapter
+        postsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        queryPosts()
     }
     fun queryPosts(){
         val query: ParseQuery<Post> = ParseQuery.getQuery(Post::class.java)
@@ -43,7 +53,11 @@ class FeedFragment : Fragment() {
                             Log.i(TAG, "Post: " + post.getGoal() + " , username: " + post.getUser()?.username
                                 )
                         }
+                        allPosts.addAll(posts)
+                        adapter.notifyDataSetChanged()
                     }
+
+
                 }
             }
         })
