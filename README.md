@@ -27,7 +27,6 @@ Tracks user's finance goals to promote saving habits. Users share progress and g
 * User logs in to access profile and feed
 * User can register to make an account
 * User can set financial goals
-* User can set times to reach these goals and/or repeaters for these events
 * Main feed with everyone's public goals 
 * Profile to see your own goals
 
@@ -37,6 +36,7 @@ Tracks user's finance goals to promote saving habits. Users share progress and g
 * Calendar for better time and money management
 * Friends list
 * Isolating posts from friends
+* User can set times to reach these goals and/or repeaters for these events
 
 ### 2. Screen Archetypes
 
