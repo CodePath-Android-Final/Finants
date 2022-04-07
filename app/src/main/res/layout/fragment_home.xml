@@ -1,14 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.HomeFragment">
+    tools:context=".fragments.HomeFragment"
+    android:background="#EBF6FF">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
+        android:id="@+id/tvMonthlyIncomeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/marmelad"
+        android:text="Monthly Income: "
+        android:textColor="#800000"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMonthlySavingsTitle" />
+
+    <TextView
+        android:id="@+id/tvMonthlySavingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/marmelad"
+        android:text="Monthly Savings: "
+        android:textColor="#800000"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalSavedTitle" />
+
+    <TextView
+        android:id="@+id/tvMonthlyIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="70dp"
+        android:fontFamily="@font/marmelad"
+        android:text="$1500"
+        android:textColor="#00AA00"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvMonthlySavingsTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalSaved" />
+
+    <TextView
+        android:id="@+id/tvMonthlySavings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="80dp"
+        android:fontFamily="@font/marmelad"
+        android:text="$589"
+        android:textColor="#00AA00"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvMonthlyIncomeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvMonthlyIncome" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvUserPosts"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="350dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRecurringFeesTitle" />
+
+    <TextView
+        android:id="@+id/tvTotalSavedTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/marmelad"
+        android:text="Total Saved: "
+        android:textColor="#800000"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTotalSaved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="80dp"
+        android:fontFamily="@font/marmelad"
+        android:text="$6969.69"
+        android:textColor="#00AA00"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvTotalSavedTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMonthlyExpenseTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/marmelad"
+        android:text="Monthly Expense: "
+        android:textColor="#800000"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMonthlyIncomeTitle" />
+
+    <TextView
+        android:id="@+id/tvMonthlyExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="75dp"
+        android:fontFamily="@font/marmelad"
+        android:text="$911"
+        android:textColor="#FF0000"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvMonthlyExpenseTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvMonthlySavings" />
+
+    <TextView
+        android:id="@+id/tvRecurringFeesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/marmelad"
+        android:text="Recurring fees: "
+        android:textColor="#800000"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMonthlyExpenseTitle" />
+
+    <TextView
+        android:id="@+id/tvRecurringFees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="90dp"
+        android:fontFamily="@font/marmelad"
+        android:text="$600"
+        android:textColor="#FF0000"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvRecurringFeesTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvMonthlyExpense" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/rvUserPosts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
