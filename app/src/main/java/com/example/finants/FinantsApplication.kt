@@ -10,6 +10,8 @@ class FinantsApplication : Application() {
         super.onCreate()
 
         ParseObject.registerSubclass(Post::class.java)
+        ParseObject.registerSubclass(Income::class.java)
+        ParseObject.registerSubclass(Expense::class.java)
 
         Parse.initialize(
             Parse.Configuration.Builder(this)

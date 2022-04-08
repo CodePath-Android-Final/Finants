@@ -8,51 +8,48 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.finants.fragments.ProfileFragment
-import com.parse.ParseFile
 import com.parse.ParseUser
-import java.io.File
-import java.util.*
 
-class ComposeGoal : AppCompatActivity() {
+class ComposeIncome : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_compose_goal)
+        setContentView(R.layout.activity_compose_income)
 
-        findViewById<Button>(R.id.submitGoalBtn).setOnClickListener {
-            val goalDescription = findViewById<EditText>(R.id.goalDesc).text.toString()
-            val amountDescription = findViewById<EditText>(R.id.amountDesc).text.toString().toInt()
+        findViewById<Button>(R.id.submitIncomeBtn).setOnClickListener {
+            val incomeDescription = findViewById<EditText>(R.id.incomeDesc).text.toString()
+            val incomeAmount = findViewById<EditText>(R.id.incomeAmt).text.toString().toInt()
             val user = ParseUser.getCurrentUser()
 
-            submitGoal(goalDescription, amountDescription, user)
+            submitIncome(incomeDescription, incomeAmount, user)
 
             // goToProfileFragment()
         }
     }
 
     /* private fun goToProfileFragment() {
-        val intent= Intent(this@ComposeGoal, ProfileFragment::class.java)
+        val intent= Intent(this@ComposeIncome, ProfileFragment::class.java)
         startActivity(intent)
         finish()
     } */
 
-    fun submitGoal(goal_description: String, amount_description: Number, user: ParseUser) {
+    fun submitIncome(income_description: String, income_amount: Number, user: ParseUser) {
+        //create the income object
+        val income = Income()
+        income.setDesc(income_description)
+        income.setAmount(income_amount)
+        income.setUser(user)
 
-        //create the post object
-        val post = Post()
-        post.setGoal(goal_description)
-        post.setAmount(amount_description)
-        post.setUser(user)
         //post.setImage(ParseFile(file))
 
-        post.saveInBackground { exception ->
+        income.saveInBackground { exception ->
             if (exception != null) {
                 // Something has went wrong
-                Log.e(TAG, "Error while saving post")
+                Log.e(TAG, "Error while saving income")
                 exception.printStackTrace()
                 // TODO: Show a toast to tell user something went wrong with saving post
                 Toast.makeText(this, "Something went wrong with saving the post!", Toast.LENGTH_SHORT).show()
             } else {
-                Log.i(TAG, "Successfully saved post")
+                Log.i(TAG, "Successfully saved income")
                 //TODO: Resetting the EditText field to be empty
                 //view.findViewById<EditText>(R.id.description).text.clear()
                 //TODO: Reset the ImageView to empty
@@ -63,8 +60,6 @@ class ComposeGoal : AppCompatActivity() {
     }
 
     companion object {
-        const val TAG = "ComposeGoal"
+        const val TAG = "ComposeIncome"
     }
-
-
 }

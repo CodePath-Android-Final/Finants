@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ProfileFragment">
+    tools:context=".fragments.ProfileFragment"
+    android:background="#EBF6FF">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -19,71 +20,125 @@
 
     <TextView
         android:id="@+id/profileName"
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:text="Spiderman"
+        android:textSize="30dp"
+        android:background="#800000"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileImage" />
 
-    <Button
-        android:id="@+id/addGoalBtn"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_margin="20dp"
-        android:text="Add Goal"
-        app:layout_constraintBottom_toTopOf="@+id/addIncBtn"
-        app:layout_constraintHorizontal_bias="0.196"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/editGoalBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_margin="20dp"
-        android:text="Edit Goal"
-        app:layout_constraintBottom_toTopOf="@+id/editIncBtn"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/addIncBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Add Income"
-        app:layout_constraintBottom_toTopOf="@+id/addExpBtn"
-        app:layout_constraintHorizontal_bias="0.209"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/editIncBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Edit Income"
-        app:layout_constraintBottom_toTopOf="@+id/editExpBtn"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/addExpBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
-        android:layout_margin="20dp"
-        android:text="Add Expense"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.216"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/profileImage">
 
-    <Button
-        android:id="@+id/editExpBtn"
-        android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/addGoalBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#800000"
+            android:fontFamily="@font/marmelad"
+            android:text="Add Goal"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/addIncBtn"
+            app:layout_constraintHorizontal_bias="0.196"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/editGoalBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#800000"
+            android:fontFamily="@font/marmelad"
+            android:text="Edit Goal"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/editIncBtn"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Edit Expense"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/linearLayout">
+
+        <Button
+            android:id="@+id/addIncBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:backgroundTint="#800000"
+            android:fontFamily="@font/marmelad"
+            android:text="Add Income"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/addExpBtn"
+            app:layout_constraintHorizontal_bias="0.209"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/editIncBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:backgroundTint="#800000"
+            android:fontFamily="@font/marmelad"
+            android:text="Edit Income"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/editExpBtn"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/addExpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="96dp"
+            android:backgroundTint="#800000"
+            android:fontFamily="@font/marmelad"
+            android:text="Add Expense"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.216"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/editExpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:backgroundTint="#800000"
+            android:fontFamily="@font/marmelad"
+            android:text="Edit Expense"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
