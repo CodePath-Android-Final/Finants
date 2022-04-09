@@ -3,6 +3,7 @@ package com.example.finants
 import com.parse.ParseClassName
 import com.parse.ParseObject
 import com.parse.ParseUser
+import java.util.*
 
 //Desc : String
 //Amount : String gets changed into number
@@ -33,6 +34,11 @@ class Income : ParseObject() {
     fun setUser(user: ParseUser) {
         put(KEY_USER, user)
     }
+
+    fun getDateCreated():Date {
+        return getCreatedAt()
+    }
+
 
     companion object {
         const val KEY_INCOME_DESCRIPTION = "income_desc"

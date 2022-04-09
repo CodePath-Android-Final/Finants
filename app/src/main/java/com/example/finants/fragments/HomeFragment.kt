@@ -1,9 +1,8 @@
 package com.example.finants.fragments
 
-import android.annotation.SuppressLint
-import android.icu.number.IntegerWidth
 import android.os.Bundle
 import android.util.Log
+import android.util.Log.ASSERT
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,15 +10,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.finants.Post
-import com.example.finants.PostAdapter
-import com.example.finants.R
-import com.example.finants.User
+import com.example.finants.*
 import com.parse.FindCallback
 import com.parse.ParseException
 import com.parse.ParseQuery
 import com.parse.ParseUser
-import com.parse.ParseUser.getCurrentUser
+import java.time.LocalDate
+import java.time.LocalTime
 
 class HomeFragment : Fragment() {
     lateinit var userRecyclerView: RecyclerView
@@ -30,9 +27,12 @@ class HomeFragment : Fragment() {
     lateinit var monthlySavings: TextView
     lateinit var monthlyIncome: TextView
     lateinit var monthlyExpense: TextView
-    lateinit var monthlyRecurringFees: TextView
+
+
 
     var userPosts: MutableList<Post> = mutableListOf()
+    var userExpenses: MutableList<Expense> = mutableListOf()
+    var userIncomes: MutableList<Income> = mutableListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,17 +51,92 @@ class HomeFragment : Fragment() {
         totalSaved=view.findViewById(R.id.tvTotalSaved)
         monthlyExpense=view.findViewById(R.id.tvMonthlyExpense)
         monthlyIncome=view.findViewById(R.id.tvMonthlyIncome)
-        monthlyRecurringFees=view.findViewById(R.id.tvRecurringFees)
         monthlySavings=view.findViewById(R.id.tvMonthlySavings)
-        //val user=User()
 
-//        totalSaved.text=user.getTotalSavings().toString()
-//        monthlyExpense.text=user.getMonthlyExpense().toString()
-//        monthlyIncome.text=user.getMonthlyIncome().toString()
-//        monthlyRecurringFees.text=user.getRecurringFees().toString()
-//        monthlySavings.text=user.getMonthlySavings().toString()
+        queryIncomeExpense()
 
         queryUserPosts()
+    }
+
+    private fun getMonthlyIncome(): Float {
+        var total:Float
+        total= 0F
+        for(income in userIncomes){
+            if((income.getDateCreated().month+1).toString()==LocalDate.now().monthValue.toString()){
+                total+=income.getAmount()!!.toInt()
+            }
+        }
+        return total
+    }
+
+    private fun getMonthlyExpense(): Float {
+        var total:Float
+        total= 0F
+        for(expense in userExpenses){
+            if((expense.getDateCreated().month+1).toString()==LocalDate.now().monthValue.toString()){
+                total+=expense.getAmount()!!.toInt()
+            }
+        }
+        return total
+    }
+//
+    private fun getTotalSavings(): Float{
+        var total:Float
+        total= 0F
+        for(income in userIncomes){
+            total+=income.getAmount()!!.toInt()
+        }
+        return total
+    }
+
+
+    fun queryIncomeExpense(){
+        val queryInc: ParseQuery<Income> = ParseQuery.getQuery(Income::class.java)
+        queryInc.include(Income.KEY_USER)
+        queryInc.whereEqualTo(Income.KEY_USER,ParseUser.getCurrentUser())
+        queryInc.addDescendingOrder("createdAt")
+        var monSaved:Float=0F
+        queryInc.findInBackground(object: FindCallback<Income> {
+            override fun done(incomes:MutableList<Income>?, e: ParseException?){
+                if(e!=null){
+                    Log.e(TAG,"Error fetching incomes")
+                    Log.e(TAG,e.localizedMessage)
+                }else{
+                    if(incomes!=null){
+                        for(income in incomes){
+                            Log.i(HomeFragment.TAG, "Income: " + income.getAmount() + " , username: " + income.getUser()?.username)
+                        }
+                        userIncomes.addAll(incomes)
+                        monthlyIncome.text="$"+getMonthlyIncome().toString()
+                        totalSaved.text="$"+getTotalSavings().toString()
+                        monSaved+=getMonthlyIncome()
+                    }
+                }
+            }
+        })
+        val query: ParseQuery<Expense> = ParseQuery.getQuery(Expense::class.java)
+        query.include(Expense.KEY_USER)
+        query.whereEqualTo(Expense.KEY_USER,ParseUser.getCurrentUser())
+        query.addDescendingOrder("createdAt")
+        query.findInBackground(object: FindCallback<Expense> {
+            override fun done(expenses:MutableList<Expense>?, e: ParseException?){
+                if(e!=null){
+                    Log.e(TAG,"Error fetching expenses")
+                    Log.e(TAG,e.localizedMessage)
+                }else{
+                    if(expenses!=null){
+                        for(expense in expenses){
+                            Log.i(HomeFragment.TAG, "Expense: " + expense.getAmount() + " , username: " + expense.getUser()?.username)
+                        }
+                        userExpenses.addAll(expenses)
+                        monthlyExpense.text="$"+getMonthlyExpense().toString()
+                        monSaved-=getMonthlyExpense()
+                        monthlySavings.text="$"+monSaved.toString()
+                    }
+                }
+            }
+        })
+
     }
 
     fun queryUserPosts() {
@@ -77,7 +152,7 @@ class HomeFragment : Fragment() {
                 }else{
                     if(posts!=null){
                         for(post in posts){
-                            Log.i(FeedFragment.TAG, "Post: " + post.getGoal() + " , username: " + post.getUser()?.username)
+                            Log.i(HomeFragment.TAG, "Post: " + post.getGoal() + " , username: " + post.getUser()?.username)
                         }
                         userPosts.addAll(posts)
                         adapter.notifyDataSetChanged()
