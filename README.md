@@ -170,6 +170,8 @@ The following **required** functionality is completed:
 - [X] Basic formatting for Feed Fragment is complete
 - [X] Basic Profile Fragment created
 - [X] Users can add goals
+- [X] Users can add expense
+- [X] Users can add income
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
