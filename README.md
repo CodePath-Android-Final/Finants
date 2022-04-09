@@ -180,4 +180,8 @@ Week 2 of Progress
 
 <img src='https://github.com/CodePath-Android-Final/Finants/blob/main/WalkthroughPart2.gif' title='Video WalkthroughPart2' width='' alt='Video Walkthrough' />
 
+Week 3 of Progress
+
+<img src='https://github.com/CodePath-Android-Final/Finants/blob/main/walkthrough3.gif' title='Video Walkthrough 3' width='' alt='Video Walkthrough'/>
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
